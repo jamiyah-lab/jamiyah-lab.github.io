@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Features</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    
+    main {
+      padding: 20px;
+    }
+    
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>JavaScript Features</h1>
+  </header>
+  
+  <main>
+    <h2>Explore JavaScript Features</h2>
+    
+    <button onclick="showCurrentDateTime()">Show Current Date and Time</button>
+    <button onclick="showAlert()">Show Alert</button>
+    <button onclick="generateRandomNumber()">Generate Random Number</button>
+    <button onclick="startCountdown()">Start Countdown</button>
+    
+    <p id="dateTimeDisplay"></p>
+    <p id="randomNumberDisplay"></p>
+    <p id="countdownDisplay"></p>
+  </main>
+  
+  <footer>
+    <p>&copy; [2024] [Jamiyah Kelly]. All rights reserved.</p>
+  </footer>
+  
+  <script>
+    // Create and call a JavaScript function that keeps track of the current day and time
+    function showCurrentDateTime() {
+      const currentDate = new Date();
+      const currentTime = currentDate.toLocaleString();
+      document.getElementById("dateTimeDisplay").textContent = "Current date and time: " + currentTime;
+    }
+    
+    // Send an alert using JavaScript
+    function showAlert() {
+      alert("Hello, world!");
+    }
+    
+    // Use a Math method
+    function generateRandomNumber() {
+      const randomNumber = Math.random();
+      document.getElementById("randomNumberDisplay").textContent = "Random number: " + randomNumber;
+    }
+    
+    // Delay one command or run a command at a specified interval
+    function startCountdown() {
+      let seconds = 10;
+      const countdownInterval = setInterval(function() {
+        document.getElementById("countdownDisplay").textContent = "Countdown: " + seconds + " seconds";
+        seconds--;
+        if (seconds === 0) {
+          clearInterval(countdownInterval);
+          document.getElementById("countdownDisplay").textContent = "Countdown finished!";
+        }
+      }, 1000);
+    }
+    
+    // Convert between a number and a text
+    const numberValue = 42;
+    const numberAsText = numberValue.toString();
+    const textAsNumber = Number(numberAsText);
+    console.log("Number value: " + numberValue);
+    console.log("Number as text: " + numberAsText);
+    console.log("Text as number: " + textAsNumber);
+  </script>
+</body>
+</html>
+
+
