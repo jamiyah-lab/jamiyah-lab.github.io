@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form Example</title>
+  <style>
+    /* CSS styles for the form */
+    form {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    fieldset {
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    legend {
+      font-weight: bold;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    input:focus, textarea:focus, select:focus {
+      outline: none;
+      border-color: #4CAF50;
+    }
+    input:invalid, textarea:invalid, select:invalid {
+      border-color: #f44336;
+    }
+    button {
+      display: block;
+      margin: 20px auto 0;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #3e8e41;
+    }
+  </style>
+</head>
+<body>
+  <form>
+    <fieldset>
+      <legend>Personal Information</legend>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      <label for="phone">Phone:</label>
+      <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
+    </fieldset>
+    <fieldset>
+      <legend>Date and Time</legend>
+      <label for="date">Date:</label>
+      <input type="date" id="date" name="date" required>
+      <label for="time">Time:</label>
+      <input type="time" id="time" name="time" required>
+    </fieldset>
+    <fieldset>
+      <legend>Gender</legend>
+      <label><input type="radio" name="gender" value="male" required> Male</label>
+      <label><input type="radio" name="gender" value="female" required> Female</label>
+      <label><input type="radio" name="gender" value="other" required> Other</label>
+    </fieldset>
+    <fieldset>
+      <legend>Preferences</legend>
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age" min="18" max="100" required>
+      <label for="rating">Rating:</label>
+      <input type="range" id="rating" name="rating" min="1" max="10" step="1" required>
+      <label>
+        <input type="checkbox" name="newsletter" value="yes"> Subscribe to newsletter
+      </label>
+    </fieldset>
+    <fieldset>
+      <legend>Additional Information</legend>
+      <label for="occupation">Occupation:</label>
+      <input list="occupations" id="occupation" name="occupation" required>
+      <datalist id="occupations">
+        <option value="Software Engineer">
+        <option value="Accountant">
+        <option value="Teacher">
+        <option value="Nurse">
+        <option value="Entrepreneur">
+      </datalist>
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+    </fieldset>
+    <button type="submit">Submit</button>
+    <button type="cancel">Cancel</button>
+    <button type="reset">Reset</button>
